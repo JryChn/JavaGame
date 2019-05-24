@@ -1,2 +1,3 @@
 # JavaGame
-一个JAVA的像素小游戏
+## Just a pixel game, it will add some function or mission later.
+## I will use it in my website construction.

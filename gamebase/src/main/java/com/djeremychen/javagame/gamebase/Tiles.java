@@ -1,5 +1,10 @@
 package com.djeremychen.javagame.gamebase;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Tiles {
     private SpriteSheet spriteSheet;
     private ArrayList<Tile> tilesList = new ArrayList<Tile>();

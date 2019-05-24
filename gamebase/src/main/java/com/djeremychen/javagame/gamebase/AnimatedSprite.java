@@ -1,5 +1,7 @@
 package com.djeremychen.javagame.gamebase;
 
+import java.awt.image.BufferedImage;
+
 public class AnimatedSprite extends Sprite implements GameObject {
     private Sprite[] sprites;
     private int currentSprite = 0;

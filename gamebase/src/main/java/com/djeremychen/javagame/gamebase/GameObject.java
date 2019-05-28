@@ -1,6 +1,6 @@
 package com.djeremychen.javagame.gamebase;
 
-public class GameObject
+public interface GameObject
 {
     //Call every time physically possible.
     public void render(RenderHandler renderer, int xZoom, int yZoom);

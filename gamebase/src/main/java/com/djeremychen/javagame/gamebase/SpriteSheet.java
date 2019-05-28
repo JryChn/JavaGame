@@ -1,5 +1,8 @@
 package com.djeremychen.javagame.gamebase;
 
+import java.awt.image.BufferedImage;
+
+
 public class SpriteSheet {
     private int[] pixels;
     private BufferedImage image;

@@ -1,5 +1,14 @@
 package com.djeremychen.javagame.gamebase;
 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Map {
     private Tiles tileSet;
     private int fillTileID = -1;

@@ -2,11 +2,11 @@ package com.djeremychen.javagame.gamebase;
 
 public class UserInterfaceGUI implements GameObject{
     private Sprite backgroundSprite;
-    private GUIButton[] buttons;
+    private GUIbutton[] buttons;
     private Rectangle rect = new Rectangle();
     private boolean fixed;
 
-    public GUI(Sprite backgroundSprite, GUIButton[] buttons, int x, int y, boolean fixed)
+    public UserInterfaceGUI(Sprite backgroundSprite, GUIbutton[] buttons, int x, int y, boolean fixed)
     {
         this.backgroundSprite = backgroundSprite;
         this.buttons = buttons;
@@ -22,7 +22,8 @@ public class UserInterfaceGUI implements GameObject{
         }
     }
 
-    public GUI(GUIButton[] buttons, int x, int y, boolean fixed)
+    public UserInterfaceGUI(GUIbutton[] buttons, int x, int y, boolean fixed)
+
     {
         this(null, buttons, x, y, fixed);
     }
@@ -40,7 +41,7 @@ public class UserInterfaceGUI implements GameObject{
     }
 
     //Call at 60 fps rate.
-    public void update(Game game)
+    public void update(GameEngine game)
     {
         if(buttons != null)
             for(int i = 0; i < buttons.length; i++)

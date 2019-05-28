@@ -5,7 +5,7 @@ public class GUIbutton implements GameObject {
     protected Rectangle rect;
     protected boolean fixed;
 
-    public GUIButton(Sprite sprite, Rectangle rect, Boolean fixed)
+    public GUIbutton(Sprite sprite, Rectangle rect, Boolean fixed)
     {
         this.sprite = sprite;
         this.rect = rect;
@@ -21,7 +21,7 @@ public class GUIbutton implements GameObject {
     }
 
     //Call at 60 fps rate.
-    public void update(Game game) {}
+    public void update(GameEngine game) {}
 
     //Call whenever mouse is clicked on Canvas.
     public boolean handleMouseClick(Rectangle mouseRectangle, Rectangle camera, int xZoom, int yZoom)
@@ -34,7 +34,9 @@ public class GUIbutton implements GameObject {
         return false;
     }
 
-    public abstract void activate();
+    public void activate(){
+
+    };
 
     public int getLayer() {
         return Integer.MAX_VALUE;

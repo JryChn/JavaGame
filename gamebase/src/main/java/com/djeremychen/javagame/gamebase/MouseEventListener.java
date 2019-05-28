@@ -2,11 +2,12 @@ package com.djeremychen.javagame.gamebase;
 
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseEvent;
 
 public class MouseEventListener implements MouseListener, MouseMotionListener {
-    private Game game;
+    private GameEngine game;
 
-    public MouseEventListener(Game game)
+    public MouseEventListener(GameEngine game)
     {
         this.game = game;
     }

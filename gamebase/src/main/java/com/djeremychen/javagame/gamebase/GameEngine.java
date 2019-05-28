@@ -11,6 +11,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import java.lang.Runnable;
+import java.lang.Thread;
+
+
 public class GameEngine extends JFrame implements Runnable {
     public static int alpha = 0xFFFF00DC;
 
@@ -72,10 +76,10 @@ public class GameEngine extends JFrame implements Runnable {
         AnimatedSprite playerAnimations = new AnimatedSprite(playerSheet, 5);
 
         //Load Tiles
-        tiles = new Tiles(new File("Tiles.txt"),sheet);
+        tiles = new Tiles(new File(GameEngine.class.getClassLoader().getResource("Tiles.txt").getPath()),sheet);
 
         //Load Map
-        map = new Map(new File("Map.txt"), tiles);
+        map = new Map(new File(GameEngine.class.getClassLoader().getResource("Map.txt").getPath()), tiles);
 
         //testImage = loadImage("GrassTile.png");
         //testSprite = sheet.getSprite(4,1);
@@ -83,17 +87,17 @@ public class GameEngine extends JFrame implements Runnable {
         testRectangle.generateGraphics(2, 12234);
 
         //Load SDK GUI
-        GUIButton[] buttons = new GUIButton[tiles.size()];
+        GUIbutton[] buttons = new GUIbutton[tiles.size()];
         Sprite[] tileSprites = tiles.getSprites();
 
         for(int i = 0; i < buttons.length; i++)
         {
             Rectangle tileRectangle = new Rectangle(0, i*(16*xZoom + 2), 16*xZoom, 16*yZoom);
 
-            buttons[i] = new SDKButton(this, i, tileSprites[i], tileRectangle);
+            buttons[i] = new SDKbutton(this, i, tileSprites[i], tileRectangle);
         }
 
-        GUI gui = new GUI(buttons, 5, 5, true);
+        UserInterfaceGUI gui = new UserInterfaceGUI(buttons, 5, 5, true);
 
         //Load Objects
         objects = new GameObject[2];
@@ -143,7 +147,7 @@ public class GameEngine extends JFrame implements Runnable {
     {
         try
         {
-            BufferedImage loadedImage = ImageIO.read(Game.class.getResource(path));
+            BufferedImage loadedImage = ImageIO.read(GameEngine.class.getClassLoader().getResource(path));
             BufferedImage formattedImage = new BufferedImage(loadedImage.getWidth(), loadedImage.getHeight(), BufferedImage.TYPE_INT_RGB);
             formattedImage.getGraphics().drawImage(loadedImage, 0, 0, null);
 
@@ -244,7 +248,7 @@ public class GameEngine extends JFrame implements Runnable {
 
     public static void main(String[] args)
     {
-        Game game = new Game();
+        GameEngine game = new GameEngine();
         Thread gameThread = new Thread(game);
         gameThread.start();
     }

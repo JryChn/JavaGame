@@ -2,13 +2,16 @@ package com.djeremychen.javagame.gamebase;
 
 import java.awt.event.FocusListener;
 import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.FocusEvent;
+
 
 public class KeyBoardListener implements KeyListener, FocusListener {
     public boolean[] keys = new boolean[120];
 
-    private Game game;
+    private GameEngine game;
 
-    public KeyBoardListener(Game game)
+    public KeyBoardListener(GameEngine game)
     {
         this.game = game;
     }

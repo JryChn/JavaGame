@@ -1,5 +1,7 @@
 package com.djeremychen.javagame.gamebase;
 
+import java.awt.image.BufferedImage;
+
 public class Sprite {
 
     protected int width, height;

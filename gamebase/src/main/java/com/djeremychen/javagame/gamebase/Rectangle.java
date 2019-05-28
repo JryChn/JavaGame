@@ -40,7 +40,7 @@ public class Rectangle {
         pixels = new int[w*h];
 
         for(int i = 0; i < pixels.length; i++)
-            pixels[i] = Game.alpha;
+            pixels[i] = GameEngine.alpha;
 
         for(int y = 0; y < borderWidth; y++)
             for(int x = 0; x < w; x++)

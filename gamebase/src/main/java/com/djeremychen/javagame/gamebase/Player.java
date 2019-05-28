@@ -47,7 +47,7 @@ public class Player implements GameObject {
     }
 
     //Call at 60 fps rate.
-    public void update(Game game)
+    public void update(GameEngine game)
     {
         KeyBoardListener keyListener = game.getKeyListener();
 

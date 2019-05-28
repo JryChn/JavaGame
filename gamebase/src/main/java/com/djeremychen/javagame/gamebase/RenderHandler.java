@@ -1,5 +1,10 @@
 package com.djeremychen.javagame.gamebase;
 
+import java.awt.Graphics;
+import java.awt.GraphicsDevice;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+
 public class RenderHandler {
     private BufferedImage view;
     private Rectangle camera;
@@ -82,7 +87,7 @@ public class RenderHandler {
                 pixelIndex = x + y * view.getWidth();
         }
 
-        if(pixels.length > pixelIndex && pixel != Game.alpha)
+        if(pixels.length > pixelIndex && pixel != GameEngine.alpha)
             pixels[pixelIndex] = pixel;
     }
 

@@ -1,11 +1,11 @@
 package com.djeremychen.javagame.gamebase;
 
 public class SDKbutton extends GUIbutton {
-    private Game game;
+    private GameEngine game;
     private int tileID;
     private boolean isGreen = false;
 
-    public SDKButton(Game game, int tileID, Sprite tileSprite, Rectangle rect)
+    public SDKbutton(GameEngine game, int tileID, Sprite tileSprite, Rectangle rect)
     {
         super(tileSprite, rect, true);
         this.game = game;
@@ -14,7 +14,7 @@ public class SDKbutton extends GUIbutton {
     }
 
     @Override
-    public void update(Game game)
+    public void update(GameEngine game)
     {
         if(tileID == game.getSelectedTile())
         {
